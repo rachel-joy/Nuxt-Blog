@@ -1,12 +1,7 @@
 function config() {
   return {
     client: 'postgresql',
-    connection: {
-      host:     '127.0.0.1',
-      database: 'myapp_example',
-      user:     'database_user',
-      password: 'database_password',
-    },
+    connection: 'postgres://localhost/web',
     // connection: {
     //   host:     process.env['POSTGRES_HOST'],
     //   database: process.env['POSTGRES_DB'],
