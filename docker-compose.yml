@@ -30,5 +30,7 @@ services:
       POSTGRES_USER: web-user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: web
+    depends_on: 
+      - postgres
 volumes:
   pg-data:

@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
     // req is the Node.js http request object
     const app = express();
 
-    app.use(postgraphile(process.env.DATABASE_URL || "postgres://localhost:5432/web"));
+    app.use(postgraphile(process.env.DATABASE_URL || "postgres://web-user:password@postgres/web"));
 
     // app.listen(process.env.PORT || 3000);
 
