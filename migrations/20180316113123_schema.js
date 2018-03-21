@@ -1,8 +1,8 @@
 
 exports.up = function(knex, Promise) {
-  knex.raw('CREATE SCHEMA app')
+  return knex.raw('CREATE SCHEMA app')
 };
 
 exports.down = function(knex, Promise) {
-  knex.raw('DROP SCHEMA app')
+  return knex.raw('DROP SCHEMA app')
 };
