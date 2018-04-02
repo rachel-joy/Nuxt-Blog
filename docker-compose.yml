@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: web
       SCHEMA: app
-      DEFAULT_ROLE: anonymous
+      DEFAULT_ROLE: web-user
       VIRTUAL_PORT: 5000
       VIRTUAL_HOST: pg.testapp.docker
     depends_on:
