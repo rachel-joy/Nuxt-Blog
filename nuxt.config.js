@@ -23,9 +23,9 @@ module.exports = {
       default: '~/apollo/client-configs/default.js'
     }
   },
-  serverMiddeware: [
+  /* serverMiddeware: [
     { path: '/', handler: require('./api-proxy.js')() },
-  ],
+  ], */
   /*
   ** Build configuration
   */
