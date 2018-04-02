@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   /*
   ** Headers of the page
@@ -33,15 +35,19 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-     /* extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+    extend (config, { isDev, isServer }) {
+      var graphqlEndpoint;
+      
+      if (isDev) {
+        if(isServer) {
+          graphqlEndpoint = process.env.INTERNAL_GRAPHQL;
+        } else {
+          graphqlEndpoint = process.env.EXTERNAL_GRAPHQL;
+        }
+
+        config.plugins = config.plugins || [];
+        config.plugins.push(webpack.DefinePlugin({GRAPHQL_ENDPOINT:JSON.stringify(graphqlEndpoint)}));
       }
-    } */
+    } 
   }
 }

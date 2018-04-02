@@ -3,7 +3,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 export default (ctx) => {
-  const httpLink = new HttpLink({ uri: 'http://testapp.docker/graphql' })
+  const httpLink = new HttpLink({ uri: GRAPHQL_ENDPOINT })
 
 
   // middleware

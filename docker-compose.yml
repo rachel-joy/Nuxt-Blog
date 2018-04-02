@@ -45,6 +45,8 @@ services:
       DOCKER_ENV: compose
       BASE_URL: http://testapp.docker
       NODE_ENV: development
+      EXTERNAL_GRAPHQL: http://pg.testapp.docker/graphql
+      INTERNAL_GRAPHQL: http://postgraphile:5000/graphql
       POSTGRES_HOST: postgres
       POSTGRES_USER: web-user
       POSTGRES_PASSWORD: password
