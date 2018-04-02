@@ -46,7 +46,7 @@ module.exports = {
         }
 
         config.plugins = config.plugins || [];
-        config.plugins.push(webpack.DefinePlugin({GRAPHQL_ENDPOINT:JSON.stringify(graphqlEndpoint)}));
+        config.plugins.push(new webpack.DefinePlugin({GRAPHQL_ENDPOINT:JSON.stringify(graphqlEndpoint)}));
       }
     } 
   }

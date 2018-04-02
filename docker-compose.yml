@@ -35,8 +35,6 @@ services:
       - .:/application
       - /application/node_modules
     command: npm run dev
-    depends_on:
-      - postgraphile
     environment:
       VIRTUAL_PORT: 8080
       VIRTUAL_HOST: testapp.docker
