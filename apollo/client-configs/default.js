@@ -8,6 +8,9 @@ export default (ctx) => {
 
   // middleware
   const middlewareLink = new ApolloLink((operation, forward) => {
+    console.log(process.server)
+    console.log(ctx.req)
+    console.log(window.__NUXT__.state)
     const token = process.server ? ctx.req.session : window.__NUXT__.state.session
 
     operation.setContext({
