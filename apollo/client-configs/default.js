@@ -7,15 +7,17 @@ export default (ctx) => {
 
 
   // middleware
-  const middlewareLink = new ApolloLink((operation, forward) => {
-    const token = process.server ? ctx.req.session : window.__NUXT__.state.session
+  // this is unnecessary for now:
+  // const middlewareLink = new ApolloLink((operation, forward) => {
+  //   const token = process.server ? ctx.req.session : window.__NUXT__.state.session
 
-    operation.setContext({
-      headers: { authorization: `Bearer ${token}` }
-    })
-    return forward(operation)
-  })
-  const link = middlewareLink.concat(httpLink)
+  //   operation.setContext({
+  //     headers: { authorization: `Bearer ${token}` }
+  //   })
+  //   return forward(operation)
+  // })
+  
+  const link = /* also unnecessary: middlewareLink.concat( */ httpLink /* )*/
   return {
     link,
     cache: new InMemoryCache()
