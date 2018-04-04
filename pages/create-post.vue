@@ -40,8 +40,8 @@ export default {
         mutation: CREATE_POST,
         variables: {
           title: this.title,
-          email: this.description,
-          password: this.content
+          description: this.description,
+          content: this.content
         }
       }).catch(error => {
         console.log(error)

@@ -3,7 +3,7 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        postgraph test
+        Blog
       </h1>
       <h2 class="subtitle">
         Nuxt.js project
@@ -14,7 +14,7 @@
           target="_blank"
           class="button--green">Documentation</a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/rachel-joy/Nuxt-Blog"
           target="_blank"
           class="button--grey">GitHub</a>
       </div>

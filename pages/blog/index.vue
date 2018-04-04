@@ -37,7 +37,6 @@ export default {
       }`,
       update(data) {
         console.log(data)
-        console.log("data.allPosts.nodes" + data.allPosts.nodes)
         return data.allPosts.nodes
       }
     }
