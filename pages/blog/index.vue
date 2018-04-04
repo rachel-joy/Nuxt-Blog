@@ -24,19 +24,22 @@ export default {
   },
   apollo: {
     allPosts: {
-      query: gql `query allPosts {
-        query {
-          allPosts {
-            nodes {
-              id
-              title
-              content
-              description
-              createdAt
-            }
+      query: gql `query allPosts{
+        allPosts {
+          nodes {
+            id
+            title
+            content
+            description
+            createdAt
           }
         }
-      }`
+      }`,
+      update(data) {
+        console.log(data)
+        console.log("data.allPosts.nodes" + data.allPosts.nodes)
+        return data.allPosts.nodes
+      }
     }
   }
 }
