@@ -1,18 +1,25 @@
 <template lang="html">
-  <article>
-    <header>
-        <h2>{{ post.title }}</h2>
-        <h3>{{ post.description }}</h3>
-        <p>{{ post.createdAt | date }}</p>
-    </header>
-    <p>{{ post.content }}</p>
-  </article>
+  <div>
+    <navbar/>
+    <article>
+      <header>
+          <h2>{{ post.title }}</h2>
+          <h3>{{ post.description }}</h3>
+          <p>{{ post.createdAt | date }}</p>
+      </header>
+      <p>{{ post.content }}</p>
+    </article>
+  </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+import Navbar from '~/components/Navbar.vue'
 
 export default {
+  components: {
+    Navbar
+  },
   data () {
     return {
       post: ''

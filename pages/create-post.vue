@@ -1,32 +1,39 @@
 <template lang="html">
-  <section>
-    <form class="post-form" method="POST">
-      <div>
-        <label for="title">Title: </label>
-        <input id="title" type="text" v-model="title" placeholder="Post Title">
-      </div>
-      <br>
-      <div>
-        <label for="description">Description: </label>
-        <input id="description" type="text" v-model="description" placeholder="Post Description">
-      </div>
-      <br>
-      <div>
-        <label for="content">Content: </label>
-        <textarea id="content" v-model="content" placeholder="Post Content"></textarea>
-      </div>
-      <br>
-      <div class="button">
-        <button type="submit" @click.prevent="createPost()">Publish Post</button>
-      </div>
-    </form>
-  </section>
+  <div>
+    <navbar/>
+    <section>
+      <form class="post-form" method="POST">
+        <div>
+          <label for="title">Title: </label>
+          <input id="title" type="text" v-model="title" placeholder="Post Title">
+        </div>
+        <br>
+        <div>
+          <label for="description">Description: </label>
+          <input id="description" type="text" v-model="description" placeholder="Post Description">
+        </div>
+        <br>
+        <div>
+          <label for="content">Content: </label>
+          <textarea id="content" v-model="content" placeholder="Post Content"></textarea>
+        </div>
+        <br>
+        <div class="button">
+          <button type="submit" @click.prevent="createPost()">Publish Post</button>
+        </div>
+      </form>
+    </section>
+  </div>
 </template>
 
 <script>
 import  { CREATE_POST } from '../graphql.js'
+import Navbar from '~/components/Navbar.vue'
 
 export default {
+  components: {
+    Navbar
+  },
   data() {
     return {
       title: '',

@@ -1,16 +1,20 @@
 <template lang="html">
   <div>
-    <section v-for="post in allPosts" :key="post.id">
+    <navbar/>
+    <section v-for="post in allPosts" :key="post.id" class="post-list">
       <nuxt-link :to="'/blog/' + post.id">{{ post.title }}</nuxt-link>
     </section>
-    <nuxt-link :to="'/'">Home</nuxt-link>
   </div>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+import Navbar from '~/components/Navbar.vue'
 
 export default {
+  components: {
+    Navbar
+  },
   data() {
     return {
       title: '',
@@ -42,4 +46,7 @@ export default {
 </script>
 
 <style lang="css">
+  .post-list {
+    padding-top: 20px;
+  }
 </style>
