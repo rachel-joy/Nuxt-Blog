@@ -1,12 +1,9 @@
 <template lang="html">
   <div>
+    <section v-for="post in allPosts" :key="post.id">
+      <nuxt-link :to="'/blog/' + post.id">{{ post.title }}</nuxt-link>
+    </section>
     <nuxt-link :to="'/'">Home</nuxt-link>
-    <div>
-      <ul>
-        <li v-for="post in allPosts"
-            :key="post.id"> {{ post.title }}</li>
-      </ul>
-    </div>
   </div>
 </template>
 
