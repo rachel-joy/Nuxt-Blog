@@ -1,8 +1,8 @@
 <template lang="html">
   <nav>
-      <router-link :to="{ path: '/' }">Home</router-link>
+      <router-link id="nav-logo" :to="{ path: '/' }">Home</router-link>
       <router-link :to="{ path: '/blog' }">Blog</router-link>
-      <router-link :to="{ path: '/create-post' }">New Post</router-link>
+      <router-link id="nav-right" :to="{ path: '/create-post' }">New Post</router-link>
   </nav>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   nav {
     width: 100%;
     height: 50px;
-    background-color: #0D4052;
+    /* background-color: #0D4052; */
     overflow: hidden;
   }
 
@@ -24,7 +24,7 @@ export default {
     float: left;
     font-family: sans-serif;
     font-size: 15px;
-    color: white;
+    color: #0D4052;
     text-decoration: none;
     padding-top: 18px;
     padding-right: 10px;
@@ -32,8 +32,18 @@ export default {
     padding-left: 10px;
    }
 
+   nav a:nth-child(n+2) {
+     float: right;
+   }
+
+
   nav a:hover {
     background-color: #3B8070;
+  }
+
+  #nav-logo {
+    margin-left: 5%;
+    font-size: 20px;
   }
 
 </style>

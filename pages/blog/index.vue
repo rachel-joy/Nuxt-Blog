@@ -48,5 +48,6 @@ export default {
 <style lang="css">
   .post-list {
     padding-top: 20px;
+    display: block;
   }
 </style>
