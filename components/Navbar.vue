@@ -1,8 +1,8 @@
 <template lang="html">
   <nav>
-      <router-link id="nav-logo" :to="{ path: '/' }">Home</router-link>
-      <router-link :to="{ path: '/blog' }">Blog</router-link>
-      <router-link id="nav-right" :to="{ path: '/create-post' }">New Post</router-link>
+      <router-link id="nav-logo" :to="{ path: '/' }">Nuxt Blog</router-link>
+      <router-link :to="{ path: '/blog' }">Blog Posts</router-link>
+      <router-link :to="{ path: '/create-post' }">New Post</router-link>
   </nav>
 </template>
 
@@ -15,15 +15,14 @@ export default {
   nav {
     width: 100%;
     height: 50px;
+    display: flex;
     /* background-color: #0D4052; */
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   nav a {
-    display: block;
-    float: left;
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 1em;
     color: #0D4052;
     text-decoration: none;
     padding-top: 18px;
@@ -33,17 +32,19 @@ export default {
    }
 
    nav a:nth-child(n+2) {
-     float: right;
+     /* float: right; */
    }
 
 
   nav a:hover {
-    background-color: #3B8070;
+    text-decoration: underline;
+    /* background-color: #3B8070; */
   }
 
   #nav-logo {
+    flex: 1;
     margin-left: 5%;
-    font-size: 20px;
+    font-size: 2em;
   }
 
 </style>
